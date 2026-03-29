@@ -13,7 +13,6 @@
   <style>
     :root{
       --bg:#0b0b0b;
-      --bg2:#101010;
       --panel:rgba(255,255,255,.03);
       --panel2:rgba(255,255,255,.045);
       --line:rgba(255,255,255,.08);
@@ -229,7 +228,6 @@
 
     .section-top{
       display:flex;
-      justify-content:space-between;
       align-items:center;
       gap:20px;
       padding:16px 18px;
@@ -244,11 +242,28 @@
       padding:28px;
     }
 
-    .section-grid{
+    /* اصلاح اصلی همینجاست */
+    .section-head{
       display:grid;
       grid-template-columns:300px 1fr;
       gap:28px;
       align-items:start;
+      margin-bottom:28px;
+    }
+
+    .section-title-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:flex-start;
+    }
+
+    .section-intro{
+      margin:0;
+      max-width:68ch;
+      color:var(--soft);
+      font-size:1rem;
+      text-align:left;
     }
 
     .section-title{
@@ -257,13 +272,7 @@
       line-height:.95;
       letter-spacing:-.07em;
       text-transform:uppercase;
-    }
-
-    .section-intro{
-      margin:0;
-      max-width:72ch;
-      color:var(--soft);
-      font-size:1rem;
+      text-align:left;
     }
 
     .about-grid{
@@ -337,12 +346,6 @@
     .process-wrap{
       display:grid;
       gap:24px;
-    }
-
-    .process-lead{
-      max-width:58ch;
-      color:var(--soft);
-      font-size:1rem;
     }
 
     .process-strip{
@@ -602,7 +605,7 @@
 
     @media (max-width: 1100px){
       .hero-grid,
-      .section-grid,
+      .section-head,
       .about-grid,
       .experience-grid,
       .education-grid,
@@ -720,15 +723,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>About</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">När innehåll blir tydligt, börjar det fungera</h2>
-            <p class="section-intro">
-              Mitt fokus är att göra information tydlig, strukturerad och relevant – oavsett om det handlar om webb, utbildning eller digitala tjänster. För mig handlar arbetet inte om att bara göra något snyggt. Det handlar om att förstå vad som faktiskt behövs, vad användaren måste förstå och vad som kan tas bort.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Mitt fokus är att göra information tydlig, strukturerad och relevant – oavsett om det handlar om webb, utbildning eller digitala tjänster. För mig handlar arbetet inte om att bara göra något snyggt. Det handlar om att förstå vad som faktiskt behövs, vad användaren måste förstå och vad som kan tas bort.
+              </p>
+              <h2 class="section-title">När innehåll blir tydligt, börjar det fungera</h2>
+            </div>
           </div>
 
           <div class="about-grid">
@@ -778,15 +782,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Process</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">Från rörigt till användbart</h2>
-            <p class="process-lead">
-              Jag arbetar praktiskt och strukturerat. Det gör att innehållet inte bara produceras, utan fungerar i verkligheten.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Jag arbetar praktiskt och strukturerat. Det gör att innehållet inte bara produceras, utan fungerar i verkligheten.
+              </p>
+              <h2 class="section-title">Från rörigt till användbart</h2>
+            </div>
           </div>
 
           <div class="process-wrap">
@@ -828,15 +833,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Skills</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">Det här använder jag för att få saker att fungera</h2>
-            <p class="section-intro">
-              Innehåll måste hålla ihop, gå att förstå och fungera för rätt person i rätt situation.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Innehåll måste hålla ihop, gå att förstå och fungera för rätt person i rätt situation.
+              </p>
+              <h2 class="section-title">Det här använder jag för att få saker att fungera</h2>
+            </div>
           </div>
 
           <div class="tools-grid">
@@ -873,15 +879,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Selected Work</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">Projekt att länka vidare till</h2>
-            <p class="section-intro">
-              Här finns plats för tydliga case. Senare kan du länka varje projekt till en separat case study-sida.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Här finns plats för tydliga case. Senare kan du länka varje projekt till en separat case study-sida.
+              </p>
+              <h2 class="section-title">Projekt att länka vidare till</h2>
+            </div>
           </div>
 
           <div class="projects-grid">
@@ -929,15 +936,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Experience</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">Där innehåll måste fungera på riktigt</h2>
-            <p class="section-intro">
-              Jag söker en roll där tydlighet, struktur och användarperspektiv är avgörande. Där innehåll inte bara ska publiceras – utan förstås och användas.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Jag söker en roll där tydlighet, struktur och användarperspektiv är avgörande. Där innehåll inte bara ska publiceras – utan förstås och användas.
+              </p>
+              <h2 class="section-title">Där innehåll måste fungera på riktigt</h2>
+            </div>
           </div>
 
           <div class="experience-grid">
@@ -969,15 +977,16 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Education</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
-          <div class="section-grid">
-            <h2 class="section-title">Utbildning kopplad till verkligt arbete</h2>
-            <p class="section-intro">
-              Kombinationen av content, visuell kommunikation och verklighetsnära arbete gör att jag rör mig naturligt mellan budskap, struktur och användning.
-            </p>
+          <div class="section-head">
+            <div class="section-title-wrap">
+              <p class="section-intro">
+                Kombinationen av content, visuell kommunikation och verklighetsnära arbete gör att jag rör mig naturligt mellan budskap, struktur och användning.
+              </p>
+              <h2 class="section-title">Utbildning kopplad till verkligt arbete</h2>
+            </div>
           </div>
 
           <div class="education-grid">
@@ -1007,7 +1016,6 @@
       <div class="container section-frame">
         <div class="section-top">
           <span>Contact</span>
-          <span>Portfolio — 2026</span>
         </div>
 
         <div class="section-body">
