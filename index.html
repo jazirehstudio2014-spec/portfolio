@@ -39,60 +39,44 @@
       scroll-behavior:smooth;
     }
 
-    body{
-      margin:0;
-      min-height:100vh;
-      font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color:var(--text);
-      line-height:1.6;
-      background-color:var(--bg);
-      background-image:
-        radial-gradient(circle at center, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0) 58%),
-        linear-gradient(
-          90deg,
-          #080808 0%,
-          #141414 9%,
-          #1a1a1a 18%,
-          #101010 28%,
-          #1a1a1a 39%,
-          #111111 49%,
-          #191919 59%,
-          #101010 70%,
-          #171717 82%,
-          #090909 100%
-        );
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-      overflow-x:hidden;
-      position:relative;
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:"Inter", system-ui, sans-serif;
+  color:#f5f4ef;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,255,255,.02), transparent 40%),
+    linear-gradient(180deg, #101010 0%, #0a0a0a 100%);
+  overflow-x:hidden;
+  position:relative;
+}
 
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.13;
-      mix-blend-mode:soft-light;
-      background-image:url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'>\
-<filter id='noise'>\
-<feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/>\
+/* subtle grain */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.08;
+  mix-blend-mode:soft-light;
+  background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'>\
+<filter id='n'>\
+<feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/>\
 </filter>\
-<rect width='180' height='180' filter='url(%23noise)' opacity='1'/>\
+<rect width='220' height='220' filter='url(%23n)' opacity='1'/>\
 </svg>");
-      background-size:180px 180px;
-      z-index:0;
-    }
+  background-size:220px 220px;
+}
 
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.24) 100%);
-      z-index:0;
-    }
+/* soft vignette */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at center, transparent 55%, rgba(0,0,0,.16) 100%);
+}
 
     img{
       display:block;
