@@ -22,10 +22,18 @@
       --muted:#8e8a83;
       --accent:#d8ff62;
       --max:1440px;
+      --radius:20px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    *{
+      box-sizing:border-box;
+      min-width:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+      -webkit-text-size-adjust:100%;
+    }
 
     body{
       margin:0;
@@ -69,8 +77,15 @@
       z-index:0;
     }
 
-    img{display:block; max-width:100%}
-    a{text-decoration:none; color:inherit}
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
     header, main, footer{
       position:relative;
@@ -87,6 +102,7 @@
       top:0;
       z-index:100;
       backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);
       background:rgba(10,10,10,.72);
       border-bottom:1px solid var(--line);
     }
@@ -111,6 +127,7 @@
       display:flex;
       gap:24px;
       flex-wrap:wrap;
+      justify-content:flex-end;
     }
 
     .nav a{
@@ -119,7 +136,9 @@
       transition:.2s ease;
     }
 
-    .nav a:hover{color:var(--text)}
+    .nav a:hover{
+      color:var(--text);
+    }
 
     .hero{
       min-height:100vh;
@@ -131,7 +150,7 @@
     .hero-grid{
       width:100%;
       display:grid;
-      grid-template-columns:1.02fr .98fr;
+      grid-template-columns:minmax(0, 1.02fr) minmax(0, .98fr);
       gap:42px;
       align-items:end;
       padding:72px 0 52px;
@@ -157,6 +176,7 @@
       font-weight:900;
       text-transform:uppercase;
       max-width:8ch;
+      text-wrap:balance;
     }
 
     .hero-copy h1 span{
@@ -219,6 +239,7 @@
     .section{
       padding:64px 0;
       border-bottom:1px solid var(--line);
+      scroll-margin-top:88px;
     }
 
     .section-frame{
@@ -242,10 +263,9 @@
       padding:28px;
     }
 
-    /* اصلاح اصلی همینجاست */
     .section-head{
       display:grid;
-      grid-template-columns:300px 1fr;
+      grid-template-columns:minmax(0, 300px) minmax(0, 1fr);
       gap:28px;
       align-items:start;
       margin-bottom:28px;
@@ -256,6 +276,7 @@
       flex-direction:column;
       gap:18px;
       align-items:flex-start;
+      width:100%;
     }
 
     .section-intro{
@@ -264,6 +285,7 @@
       color:var(--soft);
       font-size:1rem;
       text-align:left;
+      text-wrap:pretty;
     }
 
     .section-title{
@@ -273,12 +295,14 @@
       letter-spacing:-.07em;
       text-transform:uppercase;
       text-align:left;
+      text-wrap:balance;
+      max-width:14ch;
     }
 
     .about-grid{
       margin-top:28px;
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
       gap:18px;
     }
 
@@ -298,6 +322,10 @@
     .block p{
       margin:0 0 12px;
       color:var(--soft);
+    }
+
+    .block p:last-child{
+      margin-bottom:0;
     }
 
     .impact-list{
@@ -326,7 +354,9 @@
       line-height:1.5;
     }
 
-    .impact-text{color:var(--text)}
+    .impact-text{
+      color:var(--text);
+    }
 
     .about-image{
       margin-top:18px;
@@ -350,7 +380,7 @@
 
     .process-strip{
       display:grid;
-      grid-template-columns:repeat(5, 1fr);
+      grid-template-columns:repeat(5, minmax(0, 1fr));
       border:1px solid var(--line-strong);
     }
 
@@ -365,7 +395,9 @@
       gap:14px;
     }
 
-    .step:last-child{border-right:none}
+    .step:last-child{
+      border-right:none;
+    }
 
     .step small{
       font-size:.75rem;
@@ -381,7 +413,7 @@
 
     .tools-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3, minmax(0, 1fr));
       border:1px solid var(--line-strong);
       border-right:none;
       border-bottom:none;
@@ -428,7 +460,7 @@
 
     .projects-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3, minmax(0, 1fr));
       gap:18px;
     }
 
@@ -500,7 +532,7 @@
     .experience-grid,
     .education-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
       gap:18px;
     }
 
@@ -535,11 +567,12 @@
       letter-spacing:-.06em;
       text-transform:uppercase;
       font-weight:800;
+      text-wrap:balance;
     }
 
     .contact-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr);
       gap:18px;
     }
 
@@ -550,6 +583,7 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
+      gap:24px;
       background:var(--panel2);
     }
 
@@ -560,6 +594,7 @@
       letter-spacing:-.07em;
       text-transform:uppercase;
       max-width:8ch;
+      text-wrap:balance;
     }
 
     .contact-big p{
@@ -579,7 +614,9 @@
       border-bottom:1px solid var(--line);
     }
 
-    .contact-row:last-child{border-bottom:none}
+    .contact-row:last-child{
+      border-bottom:none;
+    }
 
     .contact-row small{
       display:block;
@@ -604,6 +641,10 @@
     }
 
     @media (max-width: 1100px){
+      .hero{
+        min-height:auto;
+      }
+
       .hero-grid,
       .section-head,
       .about-grid,
@@ -613,57 +654,255 @@
         grid-template-columns:1fr;
       }
 
+      .hero-grid{
+        align-items:start;
+      }
+
       .hero-side{
         justify-items:start;
       }
 
-      .hero-card{width:100%}
-      .process-strip{grid-template-columns:1fr}
+      .hero-card{
+        width:100%;
+        max-width:680px;
+      }
+
+      .section-head{
+        gap:18px;
+      }
+
+      .section-title{
+        max-width:16ch;
+      }
+
+      .process-strip{
+        grid-template-columns:1fr;
+      }
+
       .step{
         min-height:auto;
         border-right:none;
         border-bottom:1px solid var(--line);
       }
-      .step:last-child{border-bottom:none}
+
+      .step:last-child{
+        border-bottom:none;
+      }
+
       .tools-grid,
       .projects-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width: 760px){
-      .nav{display:none}
       .container{
         width:min(var(--max), calc(100% - 24px));
       }
+
+      .topbar-inner{
+        min-height:64px;
+      }
+
+      .brand{
+        font-size:.82rem;
+        letter-spacing:.14em;
+      }
+
+      .nav{
+        display:none;
+      }
+
       .hero{
         min-height:auto;
       }
+
       .hero-grid{
-        padding:44px 0;
+        gap:26px;
+        padding:30px 0 34px;
       }
+
       .micro{
+        margin-bottom:18px;
         flex-direction:column;
         align-items:flex-start;
+        gap:8px;
+        font-size:.72rem;
+        letter-spacing:.15em;
       }
+
+      .hero-copy h1{
+        font-size:clamp(2.7rem, 15vw, 4.4rem);
+        line-height:.92;
+        max-width:100%;
+      }
+
+      .hero-sub{
+        margin-top:18px;
+        font-size:.98rem;
+        line-height:1.7;
+      }
+
+      .hero-card{
+        aspect-ratio:4 / 5.2;
+      }
+
       .hero-overlay{
         flex-direction:column;
         align-items:flex-start;
+        gap:8px;
+        padding:14px;
+        font-size:.88rem;
       }
+
+      .hero-overlay-left{
+        max-width:100%;
+      }
+
       .hero-overlay-right{
         white-space:normal;
       }
+
       .section{
-        padding:52px 0;
+        padding:42px 0;
       }
-      .section-top,
+
+      .section-top{
+        padding:14px 16px;
+        font-size:.7rem;
+      }
+
       .section-body{
-        padding-left:18px;
-        padding-right:18px;
+        padding:18px 16px;
       }
+
+      .section-head{
+        margin-bottom:22px;
+        gap:14px;
+      }
+
+      .section-title-wrap{
+        gap:14px;
+      }
+
+      .section-intro{
+        font-size:.96rem;
+        line-height:1.75;
+      }
+
+      .section-title{
+        font-size:clamp(1.9rem, 10vw, 3rem);
+        line-height:1;
+        letter-spacing:-.05em;
+        max-width:100%;
+      }
+
+      .about-grid,
+      .experience-grid,
+      .education-grid,
       .tools-grid,
       .projects-grid{
         grid-template-columns:1fr;
+      }
+
+      .block,
+      .exp-card,
+      .tool,
+      .project-body,
+      .contact-big,
+      .contact-row{
+        padding:18px;
+      }
+
+      .impact-item{
+        gap:12px;
+      }
+
+      .about-image{
+        aspect-ratio:16 / 10;
+      }
+
+      .editorial-image{
+        aspect-ratio:16 / 10;
+      }
+
+      .project-media{
+        aspect-ratio:16 / 10;
+      }
+
+      .project h3{
+        font-size:1.2rem;
+      }
+
+      .quote-panel{
+        padding:24px 18px;
+      }
+
+      .quote-panel p{
+        font-size:clamp(1.5rem, 9vw, 2.4rem);
+        max-width:100%;
+        line-height:1.08;
+      }
+
+      .contact-big{
+        min-height:auto;
+      }
+
+      .contact-big h2{
+        font-size:clamp(2rem, 12vw, 3.2rem);
+        max-width:100%;
+      }
+
+      .footer{
+        padding:18px 0 28px;
+        font-size:.84rem;
+      }
+    }
+
+    @media (max-width: 420px){
+      .container{
+        width:min(var(--max), calc(100% - 20px));
+      }
+
+      .hero-grid{
+        padding:24px 0 28px;
+      }
+
+      .hero-copy h1{
+        font-size:clamp(2.35rem, 14vw, 3.5rem);
+      }
+
+      .hero-sub{
+        font-size:.94rem;
+      }
+
+      .section{
+        padding:34px 0;
+      }
+
+      .section-top{
+        padding:12px 14px;
+      }
+
+      .section-body{
+        padding:16px 14px;
+      }
+
+      .block,
+      .exp-card,
+      .tool,
+      .project-body,
+      .contact-big,
+      .contact-row{
+        padding:16px;
+      }
+
+      .tool{
+        min-height:auto;
+      }
+
+      .project-link{
+        font-size:.82rem;
       }
     }
   </style>
@@ -691,16 +930,15 @@
         <div class="hero-copy">
           <div class="micro">
             <span>Digital Content Designer</span>
-            
           </div>
 
           <h1>
-  Innehåll<br>
-  <span>som fungerar</span>
-</h1>
+            Innehåll<br>
+            <span>som fungerar</span>
+          </h1>
 
           <p class="hero-sub">
-            Om det inte är begripligt، så är det inte funktionellt. Jag skapar digitalt innehåll som sätter användaren i fokus och gör det svåra lätt att förstå.
+            Om det inte är begripligt, så är det inte funktionellt. Jag skapar digitalt innehåll som sätter användaren i fokus och gör det svåra lätt att förstå.
           </p>
         </div>
 
@@ -731,7 +969,7 @@
           <div class="section-head">
             <div class="section-title-wrap">
               <p class="section-intro">
-                Mitt fokus är att göra information tydlig, strukturerad och relevant – oavsett om det handlar om webb, utbildning eller digitala tjänster. För mig handlar arbetet inte om att bara göra något snyggt. Det handlar om att förstå vad som faktiskt behövs, vad användaren måste förstå och vad som kan tas bort.
+                Mitt fokus är att göra information tydlig, strukturerad och relevant, oavsett om det handlar om webb, utbildning eller digitala tjänster. För mig handlar arbetet inte om att bara göra något snyggt. Det handlar om att förstå vad som faktiskt behövs, vad användaren måste förstå och vad som kan tas bort.
               </p>
               <h2 class="section-title">När innehåll blir tydligt, börjar det fungera</h2>
             </div>
@@ -755,14 +993,14 @@
                 </div>
                 <div class="impact-item">
                   <div class="impact-num">04</div>
-                  <div class="impact-text">Får innehåll att leda till handling – inte bara läsning</div>
+                  <div class="impact-text">Får innehåll att leda till handling, inte bara läsning</div>
                 </div>
               </div>
             </div>
 
             <div class="block">
               <h3>Hur jag tänker</h3>
-              <p>Jag börjar inte med design – jag börjar med varför.</p>
+              <p>Jag börjar inte med design, jag börjar med varför.</p>
               <p>Vad behöver användaren förstå?</p>
               <p>Vad ska fungera efteråt?</p>
               <p>Vad kan tas bort?</p>
@@ -944,7 +1182,7 @@
           <div class="section-head">
             <div class="section-title-wrap">
               <p class="section-intro">
-                Jag söker en roll där tydlighet, struktur och användarperspektiv är avgörande. Där innehåll inte bara ska publiceras – utan förstås och användas.
+                Jag söker en roll där tydlighet, struktur och användarperspektiv är avgörande. Där innehåll inte bara ska publiceras, utan förstås och användas.
               </p>
               <h2 class="section-title">Där innehåll måste fungera på riktigt</h2>
             </div>
@@ -1056,7 +1294,7 @@
 
   <footer class="footer">
     <div class="container">
-      © 2026 Alma Stark — Digital Content Designer
+      © 2026 Alma Stark | Digital Content Designer
     </div>
   </footer>
 
